@@ -55,6 +55,24 @@ int print_num(int num)
 }
 
 /**
+ * print_bin - converts interger to binary
+ * @num: number to be converted
+ * Return: number of characters printed
+ */
+int print_bin_backwards(int num)
+{
+	int count = 0;
+
+	if (num > 0)
+	{
+		count++;
+		print_bin_backwards(num / 2);
+		putchar(num % 2 + '0');
+	}
+	return (count);
+}
+
+/**
  * _printf - Print Formatted output
  * @format: Formatted for given string
  * Return: Int
@@ -87,6 +105,10 @@ int _printf(const char *format, ...)
 			else if (*format == 'd' || *format == 'i')
 			{
 				count += print_num(va_arg(ap, int));
+			}
+			else if (*format == 'b')
+			{
+				count += print_bin_backwards(va_arg(ap, int));
 			}
 			else if (*format == '%')
 			{
