@@ -16,19 +16,27 @@ void print_null(void)
 /**
  * printstring - print a string
  * @str: String to print
+ * Return: Integer
  */
-void printstring(char *str)
+int printstring(char *str)
 {
+	int count = 0, nullLength = 6;
+
 	if (str == NULL)
+	{
 		print_null();
+		count += nullLength;
+	}
 	else
 	{
 		while (*str != '\0')
 		{
+			count++;
 			_putchar(*str);
 			str++;
 		}
 	}
+	return (count);
 }
 
 /**
@@ -48,23 +56,24 @@ int _printf(const char *format, ...)
 
 	while (*format != '\0')
 	{
-		count++;
 		if (*format == '%')
 		{
 			if (*++format == 'c')
 			{
+				count++;
 				_putchar((unsigned char) va_arg(ap, int));
 			}
 			else if (*format == 's')
 			{
 				char *str = va_arg(ap, char *);
 
-				printstring(str);
+				count += printstring(str);
 			}
 		}
 		else
 		{
 			_putchar(*format);
+			count++;
 		}
 		format++;
 	}
