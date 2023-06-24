@@ -69,6 +69,11 @@ int _printf(const char *format, ...)
 
 				count += printstring(str);
 			}
+			else
+			{
+				count++;
+				_putchar(*format);
+			}
 		}
 		else
 		{
