@@ -7,38 +7,38 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
+	int count = 0;
+
 	va_start(ap, format);
 
 	if (format == NULL)
 		exit(98);
 
-	// %c or %s
 	while (*format != '\0')
 	{
+		count++;
 		if (*format == '%')
 		{
-			if ((*++format) == 'c')
+			if (*++format == 'c')
 			{
 				_putchar((unsigned char) va_arg(ap, int));
-			}
-
-			printf("%s", *format);
-			if ((*++format) == 's')
+				format++;
+			} 
+			else if (*format == 's')
 			{
 				char *str = va_arg(ap, char *);
-				printf("\n Ours: %s\n", *str);
-				/**
+
 				while (*str != '\0')
 				{
 					_putchar(*str);
-					*str++;
+					str++;
 				}
-				*/
+				format++;
 			}
 		}
 		_putchar(*format);
-		*format++;
+		format++;
 	}
 	va_end(ap);
-	return (0);
+	return (count);
 }
