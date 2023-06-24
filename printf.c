@@ -1,5 +1,19 @@
 #include "main.h"
 /**
+ * print_null - Print null as string
+ */
+void print_null(void)
+{
+	char *nullstr = "(null)";
+
+	while (*nullstr != '\0')
+	{
+		_putchar(*nullstr);
+		nullstr++;
+	}
+}
+
+/**
  * _printf - Print Formatted output
  * @format: Formatted for given string
  * Return: Int
@@ -27,10 +41,15 @@ int _printf(const char *format, ...)
 			{
 				char *str = va_arg(ap, char *);
 
-				while (*str != '\0')
+				if (str == NULL)
+					print_null();
+				else
 				{
-					_putchar(*str);
-					str++;
+					while (*str != '\0')
+					{
+						_putchar(*str);
+						str++;
+					}
 				}
 			}
 		}
