@@ -22,7 +22,6 @@ int _printf(const char *format, ...)
 			if (*++format == 'c')
 			{
 				_putchar((unsigned char) va_arg(ap, int));
-				format++;
 			}
 			else if (*format == 's')
 			{
@@ -33,10 +32,12 @@ int _printf(const char *format, ...)
 					_putchar(*str);
 					str++;
 				}
-				format++;
 			}
 		}
-		_putchar(*format);
+		else
+		{
+			_putchar(*format);
+		}
 		format++;
 	}
 	va_end(ap);
