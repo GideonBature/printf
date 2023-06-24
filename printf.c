@@ -115,6 +115,56 @@ int print_octal(unsigned int num)
 }
 
 /**
+ * print_hexa_x - converts interger to hexadecimal
+ * @num: number to be converted
+ * Return: number of characters printed
+ */
+int print_hexa_x(unsigned int num)
+{
+	int rem;
+
+	if (num >= 16)
+	{
+		print_hexa_x(num / 16);
+	}
+	rem = num % 16;
+	if (rem < 10)
+	{
+		_putchar(rem + '0');
+	}
+	else
+	{
+		_putchar('a' + rem - 10);
+	}
+	return (0);
+}
+
+/**
+ * print_hexa_X - converts interger to hexadecimal
+ * @num: number to be converted
+ * Return: number of characters printed
+ */
+int print_hexa_X(unsigned int num)
+{
+	int rem;
+
+	if (num >= 16)
+	{
+		print_hexa_X(num / 16);
+	}
+	rem = num % 16;
+	if (rem < 10)
+	{
+		_putchar(rem + '0');
+	}
+	else
+	{
+		_putchar('A' + rem - 10);
+	}
+	return (0);
+}
+
+/**
  * _printf - Print Formatted output
  * @format: Formatted for given string
  * Return: Int
@@ -159,6 +209,14 @@ int _printf(const char *format, ...)
 			else if (*format == 'o')
 			{
 				print_octal(va_arg(ap, unsigned int));
+			}
+			else if (*format == 'x')
+			{
+				print_hexa_x(va_arg(ap, unsigned int));
+			}
+			else if (*format == 'X')
+			{
+				print_hexa_X(va_arg(ap, unsigned int));
 			}
 			else if (*format == '%')
 			{
