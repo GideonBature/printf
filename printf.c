@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 			{
 				_putchar((unsigned char) va_arg(ap, int));
 				format++;
-			} 
+			}
 			else if (*format == 's')
 			{
 				char *str = va_arg(ap, char *);
