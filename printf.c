@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
 	va_start(ap, format);
 
 	if (format == NULL)
-		return (-1);
+		exit(-1);
 
 	while (*format != '\0')
 	{
