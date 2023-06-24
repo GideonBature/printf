@@ -16,7 +16,7 @@ void print_null(void)
 /**
  * printstring - print a string
  * @str: String to print
- * Return: Integer
+ * Return: Number of characters printed
  */
 int printstring(char *str)
 {
@@ -37,6 +37,21 @@ int printstring(char *str)
 		}
 	}
 	return (count);
+}
+
+/**
+ * print_num - print all digit of numbers
+ * @num: number to be printed
+ * Return: number of characters printed
+ */
+int print_num(int num)
+{
+	int count = 0;
+
+	char str[20];
+	int len = sprintf(str, "%d", num);
+
+	return (write(1, str, len));
 }
 
 /**
@@ -69,10 +84,19 @@ int _printf(const char *format, ...)
 
 				count += printstring(str);
 			}
-			else
+			else if (*format == 'd' || *format == 'i')
+			{
+				count += print_num(va_arg(ap, int));
+			}
+			else if (*format == '%')
 			{
 				count++;
 				_putchar(*format);
+			}
+			else
+			{
+				count++;
+				_putchar(*--format);
 			}
 		}
 		else
