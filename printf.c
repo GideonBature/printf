@@ -14,6 +14,24 @@ void print_null(void)
 }
 
 /**
+ * printstring - print a string
+ * @str: String to print
+ */
+void printstring(char *str)
+{
+	if (str == NULL)
+		print_null();
+	else
+	{
+		while (*str != '\0')
+		{
+			_putchar(*str);
+			str++;
+		}
+	}
+}
+
+/**
  * _printf - Print Formatted output
  * @format: Formatted for given string
  * Return: Int
@@ -41,16 +59,7 @@ int _printf(const char *format, ...)
 			{
 				char *str = va_arg(ap, char *);
 
-				if (str == NULL)
-					print_null();
-				else
-				{
-					while (*str != '\0')
-					{
-						_putchar(*str);
-						str++;
-					}
-				}
+				printstring(str);
 			}
 		}
 		else
