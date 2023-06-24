@@ -46,12 +46,26 @@ int printstring(char *str)
  */
 int print_num(int num)
 {
-	int count = 0;
+	int rev = 0, digit;
 
-	char str[20];
-	int len = sprintf(str, "%d", num);
-
-	return (write(1, str, len));
+	if (num < 0)
+	{
+		_putchar('-');
+		num = -num;
+	}
+	while (num > 0)
+	{
+		int digit = num % 10;
+		rev = rev * 10 + digit;
+		num /= 10;
+	}
+	while (rev > 0)
+	{
+		digit = rev % 10;
+		_putchar(digit + '0');
+		rev /= 10;
+	}
+	return (0);
 }
 
 /**
@@ -65,11 +79,10 @@ int print_bin_backwards(int num)
 
 	if (num > 0)
 	{
-		count++;
 		print_bin_backwards(num / 2);
-		putchar(num % 2 + '0');
+		_putchar((num % 2) + '0');
 	}
-	return (count);
+	return (0);
 }
 
 /**
@@ -104,11 +117,11 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'd' || *format == 'i')
 			{
-				count += print_num(va_arg(ap, int));
+				print_num(va_arg(ap, int));
 			}
 			else if (*format == 'b')
 			{
-				count += print_bin_backwards(va_arg(ap, int));
+				print_bin_backwards(va_arg(ap, int));
 			}
 			else if (*format == '%')
 			{
