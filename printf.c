@@ -73,14 +73,43 @@ int print_num(int num)
  * @num: number to be converted
  * Return: number of characters printed
  */
-int print_bin_backwards(int num)
+int print_bin(int num)
 {
 	int count = 0;
 
 	if (num > 0)
 	{
-		print_bin_backwards(num / 2);
+		print_bin(num / 2);
 		_putchar((num % 2) + '0');
+	}
+	return (0);
+}
+
+/**
+ * print_unsigned - print unsigned int
+ * @num: number to be printed
+ * Return: 0
+ */
+int print_unsigned(unsigned int num)
+{
+	if (num >= 10)
+	{
+		print_unsigned(num / 10);
+	}
+	_putchar((num % 10) + '0');
+}
+
+/**
+ * print_octal - converts interger to binary
+ * @num: number to be converted
+ * Return: number of characters printed
+ */
+int print_octal(unsigned int num)
+{
+	if (num > 0)
+	{
+		print_octal(num / 8);
+		_putchar((num % 8) + '0');
 	}
 	return (0);
 }
@@ -121,7 +150,15 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'b')
 			{
-				print_bin_backwards(va_arg(ap, int));
+				print_bin(va_arg(ap, int));
+			}
+			else if (*format == 'u')
+			{
+				print_unsigned(va_arg(ap, unsigned int));
+			}
+			else if (*format == 'o')
+			{
+				print_octal(va_arg(ap, unsigned int));
 			}
 			else if (*format == '%')
 			{
