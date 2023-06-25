@@ -86,7 +86,7 @@ int print_bin(int num)
 }
 
 /**
- * print_unsigned - print unsigned int
+ * print_unsigned_int - print unsigned int
  * @num: number to be printed
  * Return: 0
  */
