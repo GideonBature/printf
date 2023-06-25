@@ -49,11 +49,6 @@ int print_num(int num)
 {
 	int rev = 0, digit;
 
-	if (num == NULL)
-	{
-		_putchar('0');
-		return;
-	}
 	if (num < 0)
 	{
 		_putchar('-');
