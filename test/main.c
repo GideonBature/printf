@@ -70,6 +70,7 @@ int main(void)
     printf("Unknown:[%r]\n");
     _printf("Binary:[%b]\n", 98);
     printf("Binary:[%b]\n", 98);
+<<<<<<< HEAD
     _printf("Decimal:[%i]\n", 58);
     printf("Decimal:[%i]\n", 58);
     _printf("Decimal:[%i]\n", 524);
@@ -87,5 +88,7 @@ int main(void)
     _printf("INT_MIN: [%i]\n", INT_MIN);
     printf("INT_MIN: [%i]\n", INT_MIN);
 
+    _printf(NULL);
+    printf(NULL);
     return (0);
 }

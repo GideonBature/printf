@@ -204,11 +204,13 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int count = 0;
 
-
 	if (!format)
 	{
 		return (-1);
 	}
+
+	if (format == NULL)
+		exit(139);
 
 	va_start(ap, format);
 
