@@ -90,11 +90,11 @@ int print_bin(int num)
  * @num: number to be printed
  * Return: 0
  */
-int print_unsigned(unsigned int num)
+int print_unsigned_int(unsigned int num)
 {
 	if (num >= 10)
 	{
-		print_unsigned(num / 10);
+		print_unsigned_int(num / 10);
 	}
 	_putchar((num % 10) + '0');
 	return (0);
@@ -208,7 +208,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'u')
 			{
-				print_unsigned(va_arg(ap, unsigned int));
+				print_unsigned_int(va_arg(ap, unsigned int));
 			}
 			else if (*format == 'o')
 			{
