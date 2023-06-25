@@ -1,4 +1,5 @@
 #include "main.h"
+int _printf(const char *format, ...);
 /**
  * print_null - Print null as string
  */
@@ -56,6 +57,7 @@ int print_num(int num)
 	while (num > 0)
 	{
 		int digit = num % 10;
+
 		rev = rev * 10 + digit;
 		num /= 10;
 	}
@@ -176,7 +178,10 @@ int _printf(const char *format, ...)
 	va_start(ap, format);
 
 	if (format == NULL)
-		exit(-1);
+	{
+		_putchar('\n');
+		return (0);
+	}
 
 	while (*format != '\0')
 	{
