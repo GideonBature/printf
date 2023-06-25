@@ -47,28 +47,26 @@ int printstring(char *str)
  */
 int print_num(int num)
 {
-	// int rev = 0, digit;
+	int rev = 0, digit;
 
-	// if (num < 0)
-	// {
-	// 	_putchar('-');
-	// 	num = -num;
-	// }
-	// while (num > 0)
-	// {
-	// 	int digit = num % 10;
+	if (num < 0)
+	{
+		_putchar('-');
+		num = -num;
+	}
+	while (num > 0)
+	{
+		int digit = num % 10;
 
-	// 	rev = rev * 10 + digit;
-	// 	num /= 10;
-	// }
-	// while (rev > 0)
-	// {
-	// 	digit = rev % 10;
-	// 	_putchar(digit + '0');
-	// 	rev /= 10;
-	// }
-
-	fprintf(stdout, "%d", num);
+		rev = rev * 10 + digit;
+		num /= 10;
+	}
+	while (rev > 0)
+	{
+		digit = rev % 10;
+		_putchar(digit + '0');
+		rev /= 10;
+	}
 	return (0);
 }
 
