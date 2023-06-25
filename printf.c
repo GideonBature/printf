@@ -75,8 +75,6 @@ int print_num(int num)
  */
 int print_bin(int num)
 {
-	int count = 0;
-
 	if (num > 0)
 	{
 		print_bin(num / 2);
@@ -97,6 +95,7 @@ int print_unsigned(unsigned int num)
 		print_unsigned(num / 10);
 	}
 	_putchar((num % 10) + '0');
+	return (0);
 }
 
 /**
