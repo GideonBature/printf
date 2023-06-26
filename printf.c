@@ -1,5 +1,6 @@
 #include "main.h"
 #include <limits.h>
+#define _NULL NULL
 int _printf(const char *format, ...);
 /**
  * print_null - Print null as string
@@ -24,7 +25,7 @@ int printstring(char *str)
 {
 	int count = 0, nullLength = 6;
 
-	if (str == NULL)
+	if (str == _NULL)
 	{
 		print_null();
 		count += nullLength;
@@ -50,25 +51,28 @@ int _printf(const char *format, ...);
  */
 int print_num(int num)
 {
-	int rev = 0, digit;
+	int rev = 0, digit, count = 0;
 
 	if (num == INT_MIN)
 	{
 		_putchar('-');
 		_putchar('2');
 		num = 147483648;
+		count += 2;
 	}
 
 	if (num == INT_MAX)
 	{
 		_putchar('2');
 		num = 147483647;
+		count += 1;
 	}
 
 	if (num < 0)
 	{
 		_putchar('-');
 		num = -num;
+		count += 1;
 	}
 	while (num > 0)
 	{
@@ -76,6 +80,7 @@ int print_num(int num)
 
 		rev = rev * 10 + digit;
 		num /= 10;
+		count += 1;
 	}
 	while (rev > 0)
 	{
@@ -84,7 +89,7 @@ int print_num(int num)
 		rev /= 10;
 	}
 
-	return (0);
+	return (count);
 }
 
 /**
@@ -193,7 +198,7 @@ int _printf(const char *format, ...)
 	int count = 0;
 
 
-	if (format == NULL)
+	if (!format)
 	{
 		return (-1);
 	}
@@ -217,9 +222,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'd' || *format == 'i')
 			{
-				{
-					print_num(va_arg(ap, int));
-				}
+				print_num(va_arg(ap, int));
 			}
 			else if (*format == 'b')
 			{
