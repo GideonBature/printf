@@ -35,6 +35,7 @@ int main(void)
     _printf("Character:[%c]\n", 'H');
     printf("Character:[%c]\n", 'H');
    _printf("Character:[%c%c]\n", 'H', 'I');
+   printf("Character:[%c%c]\n", 'H', 'I');
    _printf("Character:[%c%c%c]\n", 'H', 'I', '!');
     printf("Character:[%c%c%c]\n", 'H', 'I', '!');
    _printf("null Character:[%c%c%c]\n", 'H', 'I', NULL);
@@ -42,12 +43,12 @@ int main(void)
 
    _printf("Character:[%c %c %c]\n", 'H', 'I', '!');
     printf("Character:[%c %c %c]\n", 'H', 'I', '!');
-   _printf("Character:[%c %c]\n", 'H', 'I');
-    printf("Character:[%c %c]\n", 'H', 'I');
+   _printf("Two c with Space:[%c %c]\n", 'H', 'I');
+    printf("Two c with Space:[%c %c]\n", 'H', 'I');
    _printf("empty String:[%s]\n", "");
     printf("empty String:[%s]\n", "");
-   _printf("empty String:[%s]\n", " ");
-    printf("empty String:[%s]\n", " ");
+   _printf("Space String:[%s]\n", " ");
+    printf("Space String:[%s]\n", " ");
    _printf("String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
    _printf("String:[%s%s]\n", "I am a string !", "second string !");
@@ -73,22 +74,18 @@ int main(void)
     printf("Decimal:[%i]\n", 58);
     _printf("Decimal:[%i]\n", 524);
     printf("Decimal:[%i]\n", 524);
-    _printf("Decimal:[%i]\n", -58);
-    printf("Decimal:[%i]\n", -58);
-    _printf("Decimal:[%i]\n", 0);
-    printf("Decimal:[%i]\n", 0);
-    _printf("Decimal:[%i]\n", 2147483647);
-    printf("Decimal:[%i]\n", 2147483647);
-    _printf("Decimal:[%i]\n", 2147483648);
-    printf("Decimal:[%i]\n", 2147483648);
-    _printf("Decimal:[%i]\n", "hello");
-    printf("Decimal:[%i]\n", "hello");
-    _printf("Decimal:[%i]\n", NULL);
-    printf("Decimal:[%i]\n", NULL);
-    _printf("Decimal: [%i]\n", INT_MAX);
-    printf("Decimal: [%i]\n", INT_MAX);
-    _printf("Decimal: [%i]\n", INT_MIN);
-    printf("Decimal: [%i]\n", INT_MIN);
+    _printf("Negative Decimal:[%i]\n", -58);
+    printf("Negative Decimal:[%i]\n", -58);
+    _printf("Zero:[%i]\n", 0);
+    printf("Zero:[%i]\n", 0);
+    _printf("hello:[%i]\n", "He");
+    printf("hello:[%i]\n", "Hello");
+    _printf("NULL:[%i]\n", NULL);
+    printf("NULL:[%i]\n", NULL);
+    _printf("INT_MAX: [%i]\n", INT_MAX);
+    printf("INT_MAX: [%i]\n", INT_MAX);
+    _printf("INT_MIN: [%i]\n", INT_MIN);
+    printf("INT_MIN: [%i]\n", INT_MIN);
 
     return (0);
 }

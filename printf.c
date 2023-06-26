@@ -192,13 +192,13 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int count = 0;
 
-	va_start(ap, format);
 
 	if (format == NULL)
 	{
-		_putchar('\n');
-		return (0);
+		return (-1);
 	}
+
+	va_start(ap, format);
 
 	while (*format != '\0')
 	{
@@ -206,8 +206,8 @@ int _printf(const char *format, ...)
 		{
 			if (*++format == 'c')
 			{
-				count++;
 				_putchar((unsigned char) va_arg(ap, int));
+				count++;
 			}
 			else if (*format == 's')
 			{
@@ -217,7 +217,9 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'd' || *format == 'i')
 			{
-				print_num(va_arg(ap, int));
+				{
+					print_num(va_arg(ap, int));
+				}
 			}
 			else if (*format == 'b')
 			{
