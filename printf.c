@@ -74,6 +74,13 @@ int print_num(int num)
 		num = -num;
 		count_digit += 1;
 	}
+
+	if (num == 0)
+	{
+		_putchar('0');
+		count_digit += 1;
+		return (count_digit);
+	}
 	while (num > 0)
 	{
 		int digit = num % 10;
