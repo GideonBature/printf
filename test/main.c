@@ -16,10 +16,15 @@ int main(void)
 	unsigned int ui;
 	void *addr;
 	int n1;
-	int n2;
+    int n2;
+    int num1;
+    int num2;
 
 	n1 = 0;
-	n2 = 0;
+    n2 = 0;
+    num1 = 0;
+    num2 = 0;
+
 
 	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");
@@ -104,6 +109,16 @@ int main(void)
 	printf("Len:[%d]\n", n1);
 	printf("Len1:[%d]\n\n", n2);
 
+	n1 = _printf("Greater than int: [%i], [%d]\n", 454543939494, 454543939494);
+	n2 = printf("Greater than int: [%i], [%d]\n", 454543939494, 454543939494);
+	printf("Len:[%d]\n", n1);
+	printf("Len1:[%d]\n\n", n2);
+
+	n1 = _printf("N-Greater than int: [%i], [%d]\n", -454543939494, -454543939494);
+	n2 = printf("N-Greater than int: [%i], [%d]\n", -454543939494, -454543939494);
+	printf("Len:[%d]\n", n1);
+	printf("Len1:[%d]\n\n", n2);
+
 	n1 = _printf("long: [%i], [%d]\n", -4545439394949595, -4545439394949595);
 	n2 = printf("long: [%i], [%d]\n", -4545439394949595, -4545439394949595);
 	printf("Len:[%d]\n", n1);
@@ -127,5 +142,81 @@ int main(void)
 
 	_printf(NULL);
 	printf(NULL);
+
+    printf("Test for Task 0\n\n");
+	
+	num1 = _printf("A %s sentence\n", "simple");
+	num2 = printf("A %s sentence\n", "simple");
+	printf("Len:[%d]\n", num1);
+	printf("Len1:[%d]\n\n", num2);
+	
+	num1 = _printf("A %c%c%s sentence\n", 's', 'i', "mple");
+	num2 = printf("A %c%c%s sentence\n", 's', 'i', "mple");
+	printf("Len:[%d]\n", num1);
+	printf("Len1:[%d]\n\n", num2);
+
+	num1 = _printf("A simple %v entence\n");
+	num2 = printf("A simple %v entence\n");
+	printf("Len:[%d]\n", num1);
+	printf("Len1:[%d]\n\n", num2);
+
+	num1 = _printf("Percentage: %%\n");
+	num2 = printf("Percentage: %%\n");
+	printf("Len:[%d]\n", num1);
+	printf("Len1:[%d]\n\n", num2);
+
+	num1 = _printf("NULL: %c, %s\n", NULL, NULL);
+	num2 = printf("NULL: %c, %s\n", NULL, NULL);
+	printf("Len:[%d]\n", num1);
+	printf("Len1:[%d]\n\n", num2);
+
+	num1 = _printf("%");
+	num2 = printf("%");
+	printf("Len:[%d]\n", num1);
+	printf("Len1:[%d]\n\n", num2);
+
+	num1 = _printf("A simple sentence%");
+	num2 = printf("\nA simple sentence%");
+	printf("\nLen:[%d]\n", num1);
+	printf("Len1:[%d]\n\n", num2);
+
+    printf("Test for Binary\n\n");
+
+    num1 = _printf("Binary:[%b]\n", 98);
+	num2 = printf("Binary:[%b]\n", 98);
+    printf("num1:[%d]\n", num1);
+	printf("num2:[%d]\n", num2);
+
+    num1 = _printf("Binary:[%b]\n", 584);
+	num2 = printf("Binary:[%b]\n", 584);
+    printf("num1:[%d]\n", num1);
+	printf("num2:[%d]\n", num2);
+
+    printf("Test for Unsigned Int\n\n");
+
+    num1 = _printf("Unsigned:[%u]\n", 65695);
+	num2 = printf("Unsigned:[%u]\n", 57565);
+    printf("num1:[%u]\n", num1);
+	printf("num2:[%u]\n", num2);
+
+    printf("\nTest for Unsigned Octal\n\n");
+
+    num1 = _printf("Octal:[%o]\n", 65694595);
+	num2 = printf("Octal:[%o]\n", 65694595);
+    printf("num1:[%o]\n", num1);
+	printf("num2:[%o]\n", num2);
+
+    printf("\nTest for Unsigned Hexa-decimal\n\n");
+
+    num1 = _printf("Unsigned hexadecimal:[%x]\n", 52468);
+	num2 = printf("Unsigned hexadecimal:[%x]\n", 52468);
+    printf("num1:[%d]\n", num1);
+	printf("num2:[%d]\n", num2);
+    printf("\n\n");
+    num1 = _printf("Unsigned hexadecimal:[%X]\n", ui);
+	num2 = printf("Unsigned hexadecimal:[%X]\n", ui);
+    printf("num1:[%d]\n", num1);
+	printf("num2:[%d]\n", num2);
+
 	return (0);
 }

@@ -104,13 +104,16 @@ int print_num(long int num)
  * @num: number to be converted
  * Return: number of characters printed
  */
-int print_bin(int num)
+int print_bin(int num, int *count)
 {
+
 	if (num > 0)
 	{
-		print_bin(num / 2);
+		print_bin(num / 2, count);
 		_putchar((num % 2) + '0');
+		(*count)++;
 	}
+
 	return (0);
 }
 
@@ -119,13 +122,14 @@ int print_bin(int num)
  * @num: number to be printed
  * Return: 0
  */
-int print_unsigned_int(unsigned int num)
+int print_unsigned_int(unsigned int num, int *count)
 {
 	if (num >= 10)
 	{
-		print_unsigned_int(num / 10);
+		print_unsigned_int(num / 10, count);
 	}
 	_putchar((num % 10) + '0');
+	(*count)++;
 	return (0);
 }
 
@@ -134,12 +138,13 @@ int print_unsigned_int(unsigned int num)
  * @num: number to be converted
  * Return: number of characters printed
  */
-int print_octal(int num)
+int print_octal(int num, int *count)
 {
 	if (num > 0)
 	{
-		print_octal(num / 8);
+		print_octal(num / 8, count);
 		_putchar((num % 8) + '0');
+		(*count)++;
 	}
 	return (0);
 }
@@ -149,24 +154,29 @@ int print_octal(int num)
  * @num: number to be converted
  * Return: number of characters printed
  */
-int print_hexa_x(int num)
+int print_hexa_x(unsigned int num, int *count)
 {
 	int rem;
 
+	int count_x = 0;
+
 	if (num >= 16)
 	{
-		print_hexa_x(num / 16);
+		print_hexa_x((num / 16), count);
 	}
 	rem = num % 16;
 	if (rem < 10)
 	{
 		_putchar(rem + '0');
+		count_x++;
 	}
 	else
 	{
 		_putchar('a' + rem - 10);
+		count_x++;
 	}
-	return (0);
+	*count += count_x;
+	return (count_x);
 }
 
 /**
@@ -174,24 +184,28 @@ int print_hexa_x(int num)
  * @num: number to be converted
  * Return: number of characters printed
  */
-int print_hexa_X(int num)
+int print_hexa_X(unsigned int num, int *count)
 {
 	int rem;
+	int count_X = 0;
 
 	if (num >= 16)
 	{
-		print_hexa_X(num / 16);
+		print_hexa_X(num / 16, count);
 	}
 	rem = num % 16;
 	if (rem < 10)
 	{
 		_putchar(rem + '0');
+		count_X++;
 	}
 	else
 	{
 		_putchar('A' + rem - 10);
+		count_X++;
 	}
-	return (0);
+	*count += count_X;
+	return (count_X);
 }
 
 /**
@@ -204,13 +218,10 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int count = 0;
 
-	if (!format)
+	if (format == NULL)
 	{
 		return (-1);
 	}
-
-	if (format == NULL)
-		exit(139);
 
 	va_start(ap, format);
 
@@ -236,23 +247,30 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'b')
 			{
-				print_bin(va_arg(ap, int));
+				int num = va_arg(ap, int);
+				count += print_bin(num, &count);
 			}
 			else if (*format == 'u')
 			{
-				print_unsigned_int(va_arg(ap, unsigned int));
+				unsigned int num = va_arg(ap, unsigned int);
+				count += print_unsigned_int(num, &count);
 			}
 			else if (*format == 'o')
 			{
-				print_octal(va_arg(ap, int));
+				unsigned int num = va_arg(ap, unsigned int);
+				count += print_octal(num, &count);
 			}
 			else if (*format == 'x')
 			{
-				print_hexa_x(va_arg(ap, int));
+				int num = va_arg(ap, int);
+				count += print_hexa_x(num, &count);
+				count--;
 			}
 			else if (*format == 'X')
 			{
-				print_hexa_X(va_arg(ap, int));
+				int num = va_arg(ap, int);
+				count += print_hexa_X(num, &count);
+				count--;
 			}
 			else if (*format == '%')
 			{
@@ -272,6 +290,7 @@ int _printf(const char *format, ...)
 		}
 		format++;
 	}
+
 	va_end(ap);
 	return (count);
 }
