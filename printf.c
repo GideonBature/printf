@@ -44,7 +44,9 @@ int printstring(char *str)
 }
 
 /**
- *
+ * countchar - count number of chars
+ * @str: string to count
+ * Return: Length of char
  */
 int countchar(char *str)
 {
@@ -243,10 +245,10 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int count = 0;
 
-	if (!format)
-	{
-		return (-1);
-	}
+	// if (!format)
+	// {
+	// 	return (-1);
+	// }
 
 	if (format == NULL)
 		exit(139);
@@ -259,7 +261,7 @@ int _printf(const char *format, ...)
 		{
 			if (*++format == 'c')
 			{
-				_putchar((unsigned char) va_arg(ap, int));
+				_putchar((unsigned char)va_arg(ap, int));
 				count++;
 			}
 			else if (*format == 's')
