@@ -245,11 +245,6 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int count = 0;
 
-	// if (!format)
-	// {
-	// 	return (-1);
-	// }
-
 	if (format == NULL)
 		exit(139);
 
@@ -279,6 +274,7 @@ int _printf(const char *format, ...)
 			else if (*format == 'd' || *format == 'i')
 			{
 				int num = va_arg(ap, long int);
+
 				count += print_num(num);
 			}
 			else if (*format == 'b')
