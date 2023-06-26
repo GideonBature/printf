@@ -1,7 +1,9 @@
 #include "main.h"
 #include <limits.h>
 #define _NULL NULL
+
 int _printf(const char *format, ...);
+
 /**
  * print_null - Print null as string
  */
@@ -41,8 +43,6 @@ int printstring(char *str)
 	}
 	return (count);
 }
-
-int _printf(const char *format, ...);
 
 /**
  * print_num - print all digit of numbers

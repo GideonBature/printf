@@ -70,7 +70,6 @@ int main(void)
     printf("Unknown:[%r]\n");
     _printf("Binary:[%b]\n", 98);
     printf("Binary:[%b]\n", 98);
-<<<<<<< HEAD
     _printf("Decimal:[%i]\n", 58);
     printf("Decimal:[%i]\n", 58);
     _printf("Decimal:[%i]\n", 524);
