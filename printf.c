@@ -1,5 +1,6 @@
 #include "main.h"
 #include <limits.h>
+#include <stdlib.h>
 #define _NULL NULL
 
 int _printf(const char *format, ...);
@@ -27,7 +28,7 @@ int printstring(char *str)
 {
 	int count = 0, nullLength = 6;
 
-	if (str == _NULL)
+	if (str == NULL)
 	{
 		print_null();
 		return (nullLength);
@@ -35,9 +36,9 @@ int printstring(char *str)
 
 	while (*str != '\0')
 	{
-		count++;
 		_putchar(*str);
 		str++;
+		count++;
 	}
 
 	return (count);
