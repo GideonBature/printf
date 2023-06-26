@@ -41,6 +41,8 @@ int printstring(char *str)
 	return (count);
 }
 
+int _printf(const char *format, ...);
+
 /**
  * print_num - print all digit of numbers
  * @num: number to be printed
@@ -63,10 +65,6 @@ int print_num(int num)
 		num = 147483647;
 	}
 
-	if (num == NULL)
-	{
-		_putchar('0');
-	}
 	else
 	{
 		if (num < 0)
