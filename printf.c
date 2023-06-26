@@ -49,24 +49,33 @@ int print_num(int num)
 {
 	int rev = 0, digit;
 
-	if (num < 0)
+	if (num == NULL)
 	{
-		_putchar('-');
-		num = -num;
+		_putchar('0');
 	}
-	while (num > 0)
+	else
 	{
-		int digit = num % 10;
 
-		rev = rev * 10 + digit;
-		num /= 10;
+		if (num < 0)
+		{
+			_putchar('-');
+			num = -num;
+		}
+		while (num > 0)
+		{
+			int digit = num % 10;
+
+			rev = rev * 10 + digit;
+			num /= 10;
+		}
+		while (rev > 0)
+		{
+			digit = rev % 10;
+			_putchar(digit + '0');
+			rev /= 10;
+		}
 	}
-	while (rev > 0)
-	{
-		digit = rev % 10;
-		_putchar(digit + '0');
-		rev /= 10;
-	}
+
 	return (0);
 }
 
@@ -200,14 +209,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'd' || *format == 'i')
 			{
-				if (va_arg(ap, int) == NULL)
-				{
-					_putchar('0');
-				}
-				else
-				{
-					print_num(va_arg(ap, int));
-				}
+				print_num(va_arg(ap, int));
 			}
 			else if (*format == 'b')
 			{
