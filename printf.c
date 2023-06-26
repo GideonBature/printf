@@ -51,28 +51,28 @@ int _printf(const char *format, ...);
  */
 int print_num(int num)
 {
-	int rev = 0, digit, count = 0;
+	int rev = 0, digit, count_digit = 0;
 
 	if (num == INT_MIN)
 	{
 		_putchar('-');
 		_putchar('2');
 		num = 147483648;
-		count += 2;
+		count_digit += 2;
 	}
 
 	if (num == INT_MAX)
 	{
 		_putchar('2');
 		num = 147483647;
-		count += 1;
+		count_digit += 1;
 	}
 
 	if (num < 0)
 	{
 		_putchar('-');
 		num = -num;
-		count += 1;
+		count_digit += 1;
 	}
 	while (num > 0)
 	{
@@ -80,7 +80,7 @@ int print_num(int num)
 
 		rev = rev * 10 + digit;
 		num /= 10;
-		count += 1;
+		count_digit += 1;
 	}
 	while (rev > 0)
 	{
@@ -89,7 +89,7 @@ int print_num(int num)
 		rev /= 10;
 	}
 
-	return (count);
+	return (count_digit);
 }
 
 /**
