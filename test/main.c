@@ -69,9 +69,22 @@ int main(void)
     printf("Unknown:[%r]\n");
     _printf("Binary:[%b]\n", 98);
     printf("Binary:[%b]\n", 98);
-    _printf("Decimal:[%d]\n", NULL);
-    printf("Decimal:[%d]\n", NULL);
+    _printf("Decimal:[%i]\n", 58);
+    printf("Decimal:[%i]\n", 58);
     _printf("Decimal:[%i]\n", 524);
     printf("Decimal:[%i]\n", 524);
+    _printf("Decimal:[%i]\n", -58);
+    printf("Decimal:[%i]\n", -58);
+    _printf("Decimal:[%i]\n", 0);
+    printf("Decimal:[%i]\n", 0);
+    _printf("Decimal:[%i]\n", 2147483647);
+    printf("Decimal:[%i]\n", 2147483647);
+    _printf("Decimal:[%i]\n", 2147483648);
+    printf("Decimal:[%i]\n", 2147483648);
+    _printf("Decimal:[%i]\n", "hello");
+    printf("Decimal:[%i]\n", "hello");
+    _printf("Decimal:[%i]\n", NULL);
+    printf("Decimal:[%i]\n", NULL);
+
     return (0);
 }

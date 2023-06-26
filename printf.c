@@ -105,7 +105,7 @@ int print_unsigned_int(unsigned int num)
  * @num: number to be converted
  * Return: number of characters printed
  */
-int print_octal(unsigned int num)
+int print_octal(int num)
 {
 	if (num > 0)
 	{
@@ -120,7 +120,7 @@ int print_octal(unsigned int num)
  * @num: number to be converted
  * Return: number of characters printed
  */
-int print_hexa_x(unsigned int num)
+int print_hexa_x(int num)
 {
 	int rem;
 
@@ -145,7 +145,7 @@ int print_hexa_x(unsigned int num)
  * @num: number to be converted
  * Return: number of characters printed
  */
-int print_hexa_X(unsigned int num)
+int print_hexa_X(int num)
 {
 	int rem;
 
@@ -200,7 +200,14 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'd' || *format == 'i')
 			{
-				print_num(va_arg(ap, int));
+				if (va_arg(ap, int) == NULL)
+				{
+					_putchar('0');
+				}
+				else
+				{
+					print_num(va_arg(ap, int));
+				}
 			}
 			else if (*format == 'b')
 			{
@@ -212,15 +219,15 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'o')
 			{
-				print_octal(va_arg(ap, unsigned int));
+				print_octal(va_arg(ap, int));
 			}
 			else if (*format == 'x')
 			{
-				print_hexa_x(va_arg(ap, unsigned int));
+				print_hexa_x(va_arg(ap, int));
 			}
 			else if (*format == 'X')
 			{
-				print_hexa_X(va_arg(ap, unsigned int));
+				print_hexa_X(va_arg(ap, int));
 			}
 			else if (*format == '%')
 			{
