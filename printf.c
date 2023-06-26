@@ -51,35 +51,35 @@ int printstring(char *str)
  */
 int print_num(int num)
 {
-	int rev = 0, digit, count_digit = 0;
+	int rev = 0, digit, count = 0;
 
 	if (num == INT_MIN)
 	{
 		_putchar('-');
 		_putchar('2');
 		num = 147483648;
-		count_digit += 2;
+		count += 2;
 	}
 
 	if (num == INT_MAX)
 	{
 		_putchar('2');
 		num = 147483647;
-		count_digit += 1;
+		count += 1;
 	}
 
 	if (num < 0)
 	{
 		_putchar('-');
 		num = -num;
-		count_digit += 1;
+		count += 1;
 	}
 
 	if (num == 0)
 	{
 		_putchar('0');
-		count_digit += 1;
-		return (count_digit);
+		count += 1;
+		return (count);
 	}
 	while (num > 0)
 	{
@@ -87,7 +87,7 @@ int print_num(int num)
 
 		rev = rev * 10 + digit;
 		num /= 10;
-		count_digit += 1;
+		count += 1;
 	}
 	while (rev > 0)
 	{
@@ -96,7 +96,7 @@ int print_num(int num)
 		rev /= 10;
 	}
 
-	return (count_digit);
+	return (count);
 }
 
 /**
@@ -231,7 +231,8 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'd' || *format == 'i')
 			{
-				print_num(va_arg(ap, int));
+				int num = va_arg(ap, int);
+				count += print_num(num);
 			}
 			else if (*format == 'b')
 			{
