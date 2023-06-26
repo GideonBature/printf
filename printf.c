@@ -30,16 +30,55 @@ int printstring(char *str)
 	if (str == _NULL)
 	{
 		print_null();
-		count += nullLength;
+		return (nullLength);
 	}
-	else
+
+	while (*str != '\0')
 	{
-		while (*str != '\0')
-		{
-			count++;
-			_putchar(*str);
-			str++;
-		}
+		count++;
+		_putchar(*str);
+		str++;
+	}
+
+	return (count);
+}
+
+/**
+ *
+ */
+int countchar(char *str)
+{
+	int charcount = 0;
+
+	while (*str != '\0')
+	{
+		charcount++;
+		str++;
+	}
+	return (charcount);
+}
+
+/**
+ * printreverse - Print reversed string
+ * @str: String to reverse
+ * Return: length of written string
+ */
+int printreverse(char *str)
+{
+	int count = 0, nullLength = 6, charcount = 0;
+
+	if (str == _NULL)
+	{
+		print_null();
+		return (nullLength);
+	}
+
+	charcount = countchar(str);
+
+	while (charcount != 0)
+	{
+		count++;
+		_putchar(str[--charcount]);
 	}
 	return (count);
 }
@@ -228,6 +267,12 @@ int _printf(const char *format, ...)
 				char *str = va_arg(ap, char *);
 
 				count += printstring(str);
+			}
+			else if (*format == 'r')
+			{
+				char *str = va_arg(ap, char *);
+
+				count += printreverse(str);
 			}
 			else if (*format == 'd' || *format == 'i')
 			{

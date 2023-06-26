@@ -68,6 +68,8 @@ int main(void)
 	len2 = printf("Percent:[%%]\n");
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
+	_printf("String:[%r]\n", "I am a string !");
+	printf("String:[%r]\n", "I am a string !");
 	_printf("Unknown:[%r]\n");
 	printf("Unknown:[%r]\n");
 	_printf("Binary:[%b]\n", 98);
