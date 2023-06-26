@@ -145,7 +145,7 @@ int print_num(long int num)
  * @num: number to be converted
  * Return: number of characters printed
  */
-int print_bin(int num, int *count)
+int print_bin(unsigned int num, int *count)
 {
 
 	if (num > 0)
@@ -295,7 +295,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'b')
 			{
-				int num = va_arg(ap, int);
+				int num = va_arg(ap, unsigned int);
 				count += print_bin(num, &count);
 			}
 			else if (*format == 'u')
@@ -310,13 +310,13 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'x')
 			{
-				int num = va_arg(ap, int);
+				int num = va_arg(ap, unsigned int);
 				count += print_hexa_x(num, &count);
 				count--;
 			}
 			else if (*format == 'X')
 			{
-				int num = va_arg(ap, int);
+				int num = va_arg(ap, unsigned int);
 				count += print_hexa_X(num, &count);
 				count--;
 			}

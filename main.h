@@ -13,6 +13,6 @@ int print_octal(unsigned int num, int *count);
 int print_hexa_x(unsigned int num, int *count);
 int print_hexa_X(unsigned int num, int *count);
 int print_unsigned_int(unsigned int num, int *count);
-int print_bin(int num, int *count);
+int print_bin(unsigned int num, int *count);
 
 #endif
