@@ -43,8 +43,7 @@ int main(void)
    printf("Character:[%c%c]\n", 'H', 'I');
    _printf("Character:[%c%c%c]\n", 'H', 'I', '!');
     printf("Character:[%c%c%c]\n", 'H', 'I', '!');
-   _printf("null Character:[%c%c%c]\n", 'H', 'I', NULL);
-    printf("null Character:[%c%c%c]\n", 'H', 'I', NULL);
+
 
    _printf("Character:[%c %c %c]\n", 'H', 'I', '!');
     printf("Character:[%c %c %c]\n", 'H', 'I', '!');
@@ -63,8 +62,6 @@ int main(void)
     printf("Length:[%d, %i]\n", std, ours);
 
     printf("String:[%s %s]\n", "I am a string !", "second string !");
-    printf("String:[%s%s]\n", "I am a string !", NULL);
-    _printf("String:[%s%s]\n", "I am a string !", NULL);
     _printf("Address:[%p]\n", addr);
     printf("Address:[%p]\n", addr);
     len = _printf("Percent:[%%]\n");

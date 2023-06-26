@@ -49,9 +49,9 @@ int printstring(char *str)
  * @num: number to be printed
  * Return: number of characters printed
  */
-int print_num(int num)
+int print_num(long int num)
 {
-	int rev = 0, digit, count = 0;
+	long int rev = 0, digit, count = 0;
 
 	if (num == INT_MIN)
 	{
@@ -231,7 +231,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'd' || *format == 'i')
 			{
-				int num = va_arg(ap, int);
+				int num = va_arg(ap, long int);
 				count += print_num(num);
 			}
 			else if (*format == 'b')

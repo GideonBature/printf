@@ -8,7 +8,7 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 void print_null(void);
 int printstring(char *str);
-int print_num(int num);
+int print_num(long int num);
 int print_bin(int num);
 int print_octal(int num);
 int print_hexa_x(int num);
