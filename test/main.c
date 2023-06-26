@@ -1,6 +1,7 @@
 #include <limits.h>
 #include <stdio.h>
 #include "../main.h"
+#define ZERO 0
 
 /**
  * main - Entry point
@@ -127,6 +128,11 @@ int main(void)
 
 	n1 = _printf("NULL: [%i]\n", NULL);
 	n2 = printf("NULL: [%i]\n", NULL);
+	printf("Len:[%d]\n", n1);
+	printf("Len1:[%d]\n\n", n2);
+
+	n1 = _printf("Zero: [%i]\n", ZERO);
+	n2 = printf("Zero: [%i]\n", ZERO);
 	printf("Len:[%d]\n", n1);
 	printf("Len1:[%d]\n\n", n2);
 

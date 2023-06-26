@@ -9,7 +9,7 @@ int _putchar(char c);
 void print_null(void);
 int printstring(char *str);
 int print_num(long int num);
-int print_octal(int num, int *count);
+int print_octal(unsigned int num, int *count);
 int print_hexa_x(unsigned int num, int *count);
 int print_hexa_X(unsigned int num, int *count);
 int print_unsigned_int(unsigned int num, int *count);
