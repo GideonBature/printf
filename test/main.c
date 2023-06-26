@@ -11,8 +11,8 @@ int main(void)
 {
 	int len;
 	int len2;
-	int std; 
-	int ours; 
+	int std;
+	int ours;
 	unsigned int ui;
 	void *addr;
 	int n1;
@@ -49,7 +49,6 @@ int main(void)
 	_printf("Character:[%c%c%c]\n", 'H', 'I', '!');
 	printf("Character:[%c%c%c]\n", 'H', 'I', '!');
 
-
 	_printf("Character:[%c %c %c]\n", 'H', 'I', '!');
 	printf("Character:[%c %c %c]\n", 'H', 'I', '!');
 	_printf("Two c with Space:[%c %c]\n", 'H', 'I');
@@ -73,8 +72,10 @@ int main(void)
 	len2 = printf("Percent:[%%]\n");
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
-	_printf("Unknown:[%r]\n");
-	printf("Unknown:[%r]\n");
+	_printf("Reverse:[%r]\n", "I am a string !");
+	printf("Reversed:[%r]\n", "I am a string !");
+	// _printf("Unknown:[%r]\n");
+	// printf("Unknown:[%r]\n");
 	_printf("Binary:[%b]\n", 98);
 	printf("Binary:[%b]\n", 98);
 	_printf("Decimal:[%i]\n", 58);
@@ -138,7 +139,6 @@ int main(void)
 	n2 = printf("[%d]\n", INT_MIN);
 	printf("Len:[%d]\n", n1);
 	printf("Len1:[%d]\n\n", n2);
-
 
 	_printf(NULL);
 	printf(NULL);
