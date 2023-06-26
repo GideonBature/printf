@@ -85,6 +85,10 @@ int main(void)
     printf("Decimal:[%i]\n", "hello");
     _printf("Decimal:[%i]\n", NULL);
     printf("Decimal:[%i]\n", NULL);
+    _printf("Decimal: [%i]\n", INT_MAX);
+    printf("Decimal: [%i]\n", INT_MAX);
+    _printf("Decimal: [%i]\n", INT_MIN);
+    printf("Decimal: [%i]\n", INT_MIN);
 
     return (0);
 }

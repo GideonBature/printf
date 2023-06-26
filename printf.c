@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 int _printf(const char *format, ...);
 /**
  * print_null - Print null as string
@@ -49,13 +50,25 @@ int print_num(int num)
 {
 	int rev = 0, digit;
 
+	if (num == INT_MIN)
+	{
+		_putchar('-');
+		_putchar('2');
+		num = 147483648;
+	}
+
+	if (num == INT_MAX)
+	{
+		_putchar('2');
+		num = 147483647;
+	}
+
 	if (num == NULL)
 	{
 		_putchar('0');
 	}
 	else
 	{
-
 		if (num < 0)
 		{
 			_putchar('-');
