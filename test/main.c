@@ -198,6 +198,16 @@ int main(void)
     printf("num1:[%d]\n", num1);
 	printf("num2:[%d]\n", num2);
 
+    num1 = _printf("Null Binary:[%b]\n", NULL);
+	num2 = printf("Null Binary:[%b]\n", NULL);
+    printf("num1:[%d]\n", num1);
+	printf("num2:[%d]\n", num2);
+
+    num1 = _printf("Zero Binary:[%b]\n", ZERO);
+	num2 = printf("Zero Binary:[%b]\n", ZERO);
+    printf("num1:[%d]\n", num1);
+	printf("num2:[%d]\n", num2);
+
     printf("Test for Unsigned Int\n\n");
 
     num1 = _printf("Unsigned:[%u]\n", 65695);
@@ -212,15 +222,41 @@ int main(void)
     printf("num1:[%o]\n", num1);
 	printf("num2:[%o]\n", num2);
 
+    num1 = _printf("Null Octal:[%o]\n", NULL);
+	num2 = printf("Null Octal:[%o]\n", NULL);
+    printf("num1:[%o]\n", num1);
+	printf("num2:[%o]\n", num2);
+
+    num1 = _printf("Zero Octal:[%o]\n", ZERO);
+	num2 = printf("Zero Octal:[%o]\n", ZERO);
+    printf("num1:[%o]\n", num1);
+	printf("num2:[%o]\n", num2);
+
     printf("\nTest for Unsigned Hexa-decimal\n\n");
 
     num1 = _printf("Unsigned hexadecimal:[%x]\n", 52468);
 	num2 = printf("Unsigned hexadecimal:[%x]\n", 52468);
     printf("num1:[%d]\n", num1);
 	printf("num2:[%d]\n", num2);
+
     printf("\n\n");
+    
     num1 = _printf("Unsigned hexadecimal:[%X]\n", ui);
 	num2 = printf("Unsigned hexadecimal:[%X]\n", ui);
+    printf("num1:[%d]\n", num1);
+	printf("num2:[%d]\n", num2);
+
+    printf("\n\n");
+
+    num1 = _printf("Zero hexadecimal:[%X]\n", ZERO);
+	num2 = printf("Zero hexadecimal:[%X]\n", ZERO);
+    printf("num1:[%d]\n", num1);
+	printf("num2:[%d]\n", num2);
+
+    printf("\n\n");
+
+    num1 = _printf("Null hexadecimal:[%X]\n", NULL);
+	num2 = printf("Null hexadecimal:[%X]\n", NULL);
     printf("num1:[%d]\n", num1);
 	printf("num2:[%d]\n", num2);
 
