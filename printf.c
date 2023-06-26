@@ -154,11 +154,6 @@ int print_bin(unsigned int num, int *count)
 		_putchar((num % 2) + '0');
 		(*count)++;
 	}
-	else if (num == 0 || num == NULL)
-	{
-		_putchar('0');
-		(*count)++;
-	}
 
 	return (0);
 }

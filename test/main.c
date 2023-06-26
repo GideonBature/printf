@@ -234,8 +234,8 @@ int main(void)
 
     printf("\nTest for Unsigned Hexa-decimal\n\n");
 
-    num1 = _printf("Unsigned hexadecimal:[%x]\n", 52468);
-	num2 = printf("Unsigned hexadecimal:[%x]\n", 52468);
+    num1 = _printf("Unsigned hexadecimal:[%x]\n", 45868);
+	num2 = printf("Unsigned hexadecimal:[%x]\n", 45868);
     printf("num1:[%d]\n", num1);
 	printf("num2:[%d]\n", num2);
 
