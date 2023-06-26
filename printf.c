@@ -143,6 +143,7 @@ int print_num(long int num)
 /**
  * print_bin - converts interger to binary
  * @num: number to be converted
+ * @count: parameter
  * Return: number of characters printed
  */
 int print_bin(unsigned int num, int *count)
@@ -165,6 +166,7 @@ int print_bin(unsigned int num, int *count)
 /**
  * print_unsigned_int - print unsigned int
  * @num: number to be printed
+ * @count: parameter
  * Return: 0
  */
 int print_unsigned_int(unsigned int num, int *count)
@@ -181,6 +183,7 @@ int print_unsigned_int(unsigned int num, int *count)
 /**
  * print_octal - converts interger to binary
  * @num: number to be converted
+ * @count: parameter
  * Return: number of characters printed
  */
 int print_octal(unsigned int num, int *count)
@@ -197,6 +200,7 @@ int print_octal(unsigned int num, int *count)
 /**
  * print_hexa_x - converts interger to hexadecimal
  * @num: number to be converted
+ * @count: parameter
  * Return: number of characters printed
  */
 int print_hexa_x(unsigned int num, int *count)
@@ -227,6 +231,7 @@ int print_hexa_x(unsigned int num, int *count)
 /**
  * print_hexa_X - converts interger to hexadecimal
  * @num: number to be converted
+ * @count: parameter
  * Return: number of characters printed
  */
 int print_hexa_X(unsigned int num, int *count)
@@ -300,27 +305,32 @@ int _printf(const char *format, ...)
 			else if (*format == 'b')
 			{
 				int num = va_arg(ap, unsigned int);
+
 				count += print_bin(num, &count);
 			}
 			else if (*format == 'u')
 			{
 				unsigned int num = va_arg(ap, unsigned int);
+
 				count += print_unsigned_int(num, &count);
 			}
 			else if (*format == 'o')
 			{
 				unsigned int num = va_arg(ap, unsigned int);
+
 				count += print_octal(num, &count);
 			}
 			else if (*format == 'x')
 			{
 				int num = va_arg(ap, unsigned int);
+
 				count += print_hexa_x(num, &count);
 				count--;
 			}
 			else if (*format == 'X')
 			{
 				int num = va_arg(ap, unsigned int);
+
 				count += print_hexa_X(num, &count);
 				count--;
 			}
