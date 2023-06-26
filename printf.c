@@ -65,26 +65,23 @@ int print_num(int num)
 		num = 147483647;
 	}
 
-	else
+	if (num < 0)
 	{
-		if (num < 0)
-		{
-			_putchar('-');
-			num = -num;
-		}
-		while (num > 0)
-		{
-			int digit = num % 10;
+		_putchar('-');
+		num = -num;
+	}
+	while (num > 0)
+	{
+		int digit = num % 10;
 
-			rev = rev * 10 + digit;
-			num /= 10;
-		}
-		while (rev > 0)
-		{
-			digit = rev % 10;
-			_putchar(digit + '0');
-			rev /= 10;
-		}
+		rev = rev * 10 + digit;
+		num /= 10;
+	}
+	while (rev > 0)
+	{
+		digit = rev % 10;
+		_putchar(digit + '0');
+		rev /= 10;
 	}
 
 	return (0);
