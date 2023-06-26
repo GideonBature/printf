@@ -87,6 +87,45 @@ int main(void)
     _printf("INT_MIN: [%i]\n", INT_MIN);
     printf("INT_MIN: [%i]\n", INT_MIN);
 
+    int n1 = 0;
+	int n2 = 0;
+	
+	n1 = _printf("\nNumber: [%d], [%i]\n", 4034, 4034);
+	n2 = printf("Number: [%d], [%i]\n", 4034, 4034);
+	printf("Len:[%d]\n", len);
+	printf("Len1:[%d]\n\n", len2);
+	
+	n1 = _printf("Negative: [%i], [%d]\n", -4034, -4034);
+	n2 = printf("Negative: [%i], [%d]\n", -4034, -4034);
+	printf("Len:[%d]\n", len);
+	printf("Len1:[%d]\n\n", len2);
+
+	n1 = _printf("long: [%i], [%d]\n", 4545439394949595, 4545439394949595);
+	n2 = printf("long: [%i], [%d]\n", 4545439394949595, 4545439394949595);
+	printf("Len:[%d]\n", len);
+	printf("Len1:[%d]\n\n", len2);
+
+	n1 = _printf("long: [%i], [%d]\n", -4545439394949595, -4545439394949595);
+	n2 = printf("long: [%i], [%d]\n", -4545439394949595, -4545439394949595);
+	printf("Len:[%d]\n", len);
+	printf("Len1:[%d]\n\n", len2);
+
+	n1 = _printf("NULL: [%i]\n", NULL);
+	n2 = printf("NULL: [%i]\n", NULL);
+	printf("Len:[%d]\n", len);
+	printf("Len1:[%d]\n\n", len2);
+
+	n1 = _printf("[%d]\n", INT_MAX);
+	n2 = printf("[%d]\n", INT_MAX);
+	printf("Len:[%d]\n", len);
+	printf("Len1:[%d]\n\n", len2);
+
+	n1 = _printf("[%d]\n", INT_MIN);
+	n2 = printf("[%d]\n", INT_MIN);
+	printf("Len:[%d]\n", len);
+	printf("Len1:[%d]\n\n", len2);
+
+
     _printf(NULL);
     printf(NULL);
     return (0);
