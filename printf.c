@@ -1,7 +1,6 @@
 #include "main.h"
 #include <limits.h>
 #include <stdlib.h>
-#define _NULL NULL
 
 int _printf(const char *format, ...);
 
@@ -70,7 +69,7 @@ int printreverse(char *str)
 {
 	int count = 0, nullLength = 6, charcount = 0;
 
-	if (str == _NULL)
+	if (str == NULL)
 	{
 		print_null();
 		return (nullLength);
@@ -265,9 +264,7 @@ int _printf(const char *format, ...)
 	int count = 0;
 
 	if (format == NULL)
-	{
-		return (-1);
-	}
+		exit(139);
 
 	va_start(ap, format);
 
