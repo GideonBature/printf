@@ -16,22 +16,17 @@ int main(void)
 	int ours;
 	unsigned int ui;
 	void *addr;
-	int n1;
-    int n2;
-    int num1;
-    int num2;
+	int n1 = 0;
+	int n2 = 0;
 
-	n1 = 0;
-    n2 = 0;
-    num1 = 0;
-    num2 = 0;
-
+	int num1 = 0;
+	int num2 = 0;
 
 	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");
 	ui = (unsigned int)INT_MAX + 1024;
 	addr = (void *)0x7ffe637541f0;
-	_printf("Length:[%d, %i]\n", len, len);
+	_printf("Length:[%d, %i]\n", len, len2);
 	printf("Length:[%d, %i], [%d, %i]\n", len2, len2, len, len);
 	_printf("Negative:[%d]\n", -762534);
 	printf("Negative:[%d]\n", -762534);
@@ -40,33 +35,51 @@ int main(void)
 	_printf("Unsigned octal:[%o]\n", ui);
 	printf("Unsigned octal:[%o]\n", ui);
 	_printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-	printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+	printf("Unsigned hexadecimal:[%x, %X]\n\n", ui, ui);
+
+	/** TESTING CHARACTERS  */
 	_printf("empty Character:[%c]\n", ' ');
 	printf("empty Character:[%c]\n", ' ');
 	_printf("Character:[%c]\n", 'H');
 	printf("Character:[%c]\n", 'H');
+	_printf("NULL Ch param:[%c]\n", NULL);
+	printf("NULL Ch param:[%c]\n", NULL);
+	_printf("NULL Ch param:[%c%c]\n", NULL, 'N');
+	printf("NULL Ch param:[%c%c]\n", NULL, 'N');
 	_printf("Character:[%c%c]\n", 'H', 'I');
 	printf("Character:[%c%c]\n", 'H', 'I');
 	_printf("Character:[%c%c%c]\n", 'H', 'I', '!');
 	printf("Character:[%c%c%c]\n", 'H', 'I', '!');
-
 	_printf("Character:[%c %c %c]\n", 'H', 'I', '!');
 	printf("Character:[%c %c %c]\n", 'H', 'I', '!');
-	_printf("Two c with Space:[%c %c]\n", 'H', 'I');
-	printf("Two c with Space:[%c %c]\n", 'H', 'I');
+	ours = _printf("Two c with Space:[%c %c]\n", 'H', 'I');
+	std = printf("Two c with Space:[%c %c]\n", 'H', 'I');
+	printf("Char Length:[%d, %i]\n\n", std, ours);
+
+	/** TESTING STRINGS  */
 	_printf("empty String:[%s]\n", "");
 	printf("empty String:[%s]\n", "");
 	_printf("Space String:[%s]\n", " ");
 	printf("Space String:[%s]\n", " ");
-	_printf("String:[%s]\n", "I am a string !");
-	printf("String:[%s]\n", "I am a string !");
-	_printf("String:[%s%s]\n", "I am a string !", "second string !");
+	_printf("String1:[%s]\n", "I am a string !");
+	printf("String2:[%s]\n", "I am a string !");
+	_printf("NULL Str Param:[%s]\n", NULL);
+	printf("NULL Str Param:[%s]\n", NULL);
+	ours = _printf("String !space:[%s%s]\n", "I am a string !", "second string !");
+	std = printf("String !space:[%s%s]\n", "I am a string !", "second string !");
+	_printf("String space:[%s %s]\n", "I am a string !", "second string !");
+	printf("String space:[%s %s]\n", "I am a string !", "second string !");
+	printf("Length:[%d, %i]\n\n", std, ours);
+	n1 = _printf("%s\n", NULL);
+	n2 = printf("%s\n", NULL);
+	printf("n1:[%d]\n", n1);
+	printf("n2:[%d]\n\n", n2);
+	n1 = _printf("%s\n", "");
+	n2 = printf("%s\n", "");
+	printf("n1:[%d]\n", n1);
+	printf("n2:[%d]\n\n", n2);
 
-	std = printf("String:[%s%s]\n", "I am a string !", "second string !");
-	ours = _printf("String:[%s%s]\n", "I am a string !", "second string !");
-	printf("Length:[%d, %i]\n", std, ours);
-
-	printf("String:[%s %s]\n", "I am a string !", "second string !");
+	/** TESTING ADDRESSES */
 	_printf("Address:[%p]\n", addr);
 	printf("Address:[%p]\n", addr);
 	len = _printf("Percent:[%%]\n");
@@ -149,13 +162,13 @@ int main(void)
 	_printf(NULL);
 	printf(NULL);
 
-    printf("Test for Task 0\n\n");
-	
+	printf("Test for Task 0\n\n");
+
 	num1 = _printf("A %s sentence\n", "simple");
 	num2 = printf("A %s sentence\n", "simple");
 	printf("Len:[%d]\n", num1);
 	printf("Len1:[%d]\n\n", num2);
-	
+
 	num1 = _printf("A %c%c%s sentence\n", 's', 'i', "mple");
 	num2 = printf("A %c%c%s sentence\n", 's', 'i', "mple");
 	printf("Len:[%d]\n", num1);
@@ -186,78 +199,78 @@ int main(void)
 	printf("\nLen:[%d]\n", num1);
 	printf("Len1:[%d]\n\n", num2);
 
-    printf("Test for Binary\n\n");
+	printf("Test for Binary\n\n");
 
-    num1 = _printf("Binary:[%b]\n", 98);
+	num1 = _printf("Binary:[%b]\n", 98);
 	num2 = printf("Binary:[%b]\n", 98);
-    printf("num1:[%d]\n", num1);
+	printf("num1:[%d]\n", num1);
 	printf("num2:[%d]\n", num2);
 
-    num1 = _printf("Binary:[%b]\n", 584);
+	num1 = _printf("Binary:[%b]\n", 584);
 	num2 = printf("Binary:[%b]\n", 584);
-    printf("num1:[%d]\n", num1);
+	printf("num1:[%d]\n", num1);
 	printf("num2:[%d]\n", num2);
 
-    num1 = _printf("Null Binary:[%b]\n", NULL);
+	num1 = _printf("Null Binary:[%b]\n", NULL);
 	num2 = printf("Null Binary:[%b]\n", NULL);
-    printf("num1:[%d]\n", num1);
+	printf("num1:[%d]\n", num1);
 	printf("num2:[%d]\n", num2);
 
-    num1 = _printf("Zero Binary:[%b]\n", ZERO);
+	num1 = _printf("Zero Binary:[%b]\n", ZERO);
 	num2 = printf("Zero Binary:[%b]\n", ZERO);
-    printf("num1:[%d]\n", num1);
+	printf("num1:[%d]\n", num1);
 	printf("num2:[%d]\n", num2);
 
-    printf("Test for Unsigned Int\n\n");
+	printf("Test for Unsigned Int\n\n");
 
-    num1 = _printf("Unsigned:[%u]\n", 65695);
+	num1 = _printf("Unsigned:[%u]\n", 65695);
 	num2 = printf("Unsigned:[%u]\n", 57565);
-    printf("num1:[%u]\n", num1);
+	printf("num1:[%u]\n", num1);
 	printf("num2:[%u]\n", num2);
 
-    printf("\nTest for Unsigned Octal\n\n");
+	printf("\nTest for Unsigned Octal\n\n");
 
-    num1 = _printf("Octal:[%o]\n", 65694595);
+	num1 = _printf("Octal:[%o]\n", 65694595);
 	num2 = printf("Octal:[%o]\n", 65694595);
-    printf("num1:[%o]\n", num1);
+	printf("num1:[%o]\n", num1);
 	printf("num2:[%o]\n", num2);
 
-    num1 = _printf("Null Octal:[%o]\n", NULL);
+	num1 = _printf("Null Octal:[%o]\n", NULL);
 	num2 = printf("Null Octal:[%o]\n", NULL);
-    printf("num1:[%o]\n", num1);
+	printf("num1:[%o]\n", num1);
 	printf("num2:[%o]\n", num2);
 
-    num1 = _printf("Zero Octal:[%o]\n", ZERO);
+	num1 = _printf("Zero Octal:[%o]\n", ZERO);
 	num2 = printf("Zero Octal:[%o]\n", ZERO);
-    printf("num1:[%o]\n", num1);
+	printf("num1:[%o]\n", num1);
 	printf("num2:[%o]\n", num2);
 
-    printf("\nTest for Unsigned Hexa-decimal\n\n");
+	printf("\nTest for Unsigned Hexa-decimal\n\n");
 
-    num1 = _printf("Unsigned hexadecimal:[%x]\n", 45868);
+	num1 = _printf("Unsigned hexadecimal:[%x]\n", 45868);
 	num2 = printf("Unsigned hexadecimal:[%x]\n", 45868);
-    printf("num1:[%d]\n", num1);
+	printf("num1:[%d]\n", num1);
 	printf("num2:[%d]\n", num2);
 
-    printf("\n\n");
-    
-    num1 = _printf("Unsigned hexadecimal:[%X]\n", ui);
+	printf("\n\n");
+
+	num1 = _printf("Unsigned hexadecimal:[%X]\n", ui);
 	num2 = printf("Unsigned hexadecimal:[%X]\n", ui);
-    printf("num1:[%d]\n", num1);
+	printf("num1:[%d]\n", num1);
 	printf("num2:[%d]\n", num2);
 
-    printf("\n\n");
+	printf("\n\n");
 
-    num1 = _printf("Zero hexadecimal:[%X]\n", ZERO);
+	num1 = _printf("Zero hexadecimal:[%X]\n", ZERO);
 	num2 = printf("Zero hexadecimal:[%X]\n", ZERO);
-    printf("num1:[%d]\n", num1);
+	printf("num1:[%d]\n", num1);
 	printf("num2:[%d]\n", num2);
 
-    printf("\n\n");
+	printf("\n\n");
 
-    num1 = _printf("Null hexadecimal:[%X]\n", NULL);
+	num1 = _printf("Null hexadecimal:[%X]\n", NULL);
 	num2 = printf("Null hexadecimal:[%X]\n", NULL);
-    printf("num1:[%d]\n", num1);
+	printf("num1:[%d]\n", num1);
 	printf("num2:[%d]\n", num2);
 
 	return (0);
