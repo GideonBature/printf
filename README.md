@@ -5,10 +5,10 @@
 
 _For this project, we expect you to look at these concepts:_
 
-*   [Group Projects](/concepts/111)
-*   [Pair Programming - How To](/concepts/121)
-*   [Flowcharts](/concepts/130)
-*   [Technical Writing](/concepts/225)
+*   [Group Projects](group_projects.md)
+*   [Pair Programming - How To](pair_programming.md)
+*   [Flowcharts](flow_charts.md)
+*   [Technical Writing](technical_writing.md)
 
 Background Context
 ------------------
