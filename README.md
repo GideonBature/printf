@@ -1,190 +1,5 @@
-      window.dataLayer = window.dataLayer || \[\]; dataLayer.push({"userId":295751,"visitorType":"student","batch":{"id":92,"fullNameWithC":"LOS-0423 (C#15)","schoolLocation":{"id":3,"name":"Lagos"}},"curriculum":{"id":1,"name":"SE Foundations"}}); window.gtm\_user\_custom\_event = function (name, options) { if (typeof name === 'undefined') { return; } window.dataLayer.push({ customEventOptions: typeof options !== 'undefined' ? options : {}, event: name, }); } (function(w,d,s,l,i){w\[l\]=w\[l\]||\[\];w\[l\].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)\[0\], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-N4C8MF2'); Project: 0x11. C - printf | Lagos Intranet          Cookies.set('timezone', (new Date()).getTimezoneOffset() / -60.0);  
-
-Toggle navigation[
-
-](/)
-
-*   [
-    
-    My Planning
-    
-    ](/planning/me)
-*   [
-    
-    Projects
-    
-    ](/projects/current)
-*   [
-    
-    QA Reviews I can make
-    
-    ](/corrections/to_review)
-*   [
-    
-    Evaluation quizzes
-    
-    ](/dashboards/my_current_evaluation_quizzes)
-
-* * *
-
-*   [
-    
-    Curriculums
-    
-    ](/dashboards/my_curriculums)
-*   [
-    
-    Concepts
-    
-    ](/concepts)
-*   [
-    
-    Conference rooms
-    
-    ](/dashboards/video_rooms)
-*   [
-    
-    Servers
-    
-    ](/servers)
-*   [
-    
-    Sandboxes
-    
-    ](/user_containers/current)
-*   [
-    
-    Video on demand
-    
-    ](/dashboards/videos)
-
-* * *
-
-*   [
-    
-    Peers
-    
-    ](/users/peers)
-*   [
-    
-    Captain's Logs
-    
-    ](/dashboards/my_captain_log)
-
-* * *
-
-*   [
-    
-    Slack
-    
-    ](https://alx-students.slack.com)
-    
-    [
-    
-    My Profile
-    
-    ](/users/my_profile)
-    
-
-[
-
-](/)
-
-*   [
-    
-    My Planning
-    
-    ](/planning/me)
-*   [
-    
-    Projects
-    
-    ](/projects/current)
-*   [
-    
-    QA Reviews I can make
-    
-    ](/corrections/to_review)
-*   [
-    
-    Evaluation quizzes
-    
-    ](/dashboards/my_current_evaluation_quizzes)
-
-* * *
-
-*   [
-    
-    Curriculums
-    
-    ](/dashboards/my_curriculums)
-*   [
-    
-    Concepts
-    
-    ](/concepts)
-*   [
-    
-    Conference rooms
-    
-    ](/dashboards/video_rooms)
-*   [
-    
-    Servers
-    
-    ](/servers)
-*   [
-    
-    Sandboxes
-    
-    ](/user_containers/current)
-*   [
-    
-    Video on demand
-    
-    ](/dashboards/videos)
-
-* * *
-
-*   [
-    
-    Peers
-    
-    ](/users/peers)
-*   [
-    
-    Captain's Logs
-    
-    ](/dashboards/my_captain_log)
-
-* * *
-
-*   [
-    
-    Slack
-    
-    ](https://alx-students.slack.com)
-    
-    [
-    
-    My Profile
-    
-    ](/users/my_profile)
-    
-
 0x11. C - printf
 ================
-
-#### In a nutshell…
-
-*   **Contribution:** 100.0%
-    
-*   **Auto QA review:** 98.0/101 mandatory & 343.0/1123 optional
-*   **Altogether:**  **126.66%**
-    *   Mandatory: 97.03%
-    *   Optional: 30.54%
-    *   Contribution: 100.0%
-    *   Calculation:  100.0% \* (97.03% + (97.03% \* 30.54%) )  == **126.66%**
 
 ### Concepts
 
@@ -226,7 +41,7 @@ Requirements
 *   All your files will be compiled on Ubuntu 20.04 LTS using `gcc`, using the options `-Wall -Werror -Wextra -pedantic -std=gnu89`
 *   All your files should end with a new line
 *   A `README.md` file, at the root of the folder of the project is mandatory
-*   Your code should use the `Betty` style. It will be checked using [betty-style.pl](https://github.com/alx-tools/Betty/blob/master/betty-style.pl "betty-style.pl") and [betty-doc.pl](https://github.com/alx-tools/Betty/blob/master/betty-doc.pl "betty-doc.pl")
+*   Your code should use the `Betty` style. It will be checked using [betty-style.pl](https://github.com/alx-tools/Betty/blob/master/betty-style.pl) and [betty-doc.pl](https://github.com/alx-tools/Betty/blob/master/betty-doc.pl)
 *   You are not allowed to use global variables
 *   No more than 5 functions per file
 *   In the following examples, the `main.c` files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own `main.c` files at compilation. Our `main.c` files might be different from the one shown in the examples
@@ -262,7 +77,7 @@ More Info
 *   As a consequence, be careful not to push any c file containing a `main` function in the root directory of your project (you could have a `test` folder containing all your tests files including `main` functions)
 *   Our main files will include your main header file (`main.h`): `#include main.h`
 *   You might want to look at the gcc flag `-Wno-format` when testing with your `_printf` and the standard `printf`. Example of test file that you could use:
-
+```
     alex@ubuntu:~/c/printf$ cat main.c 
     #include <limits.h>
     #include <stdio.h>
@@ -308,6 +123,8 @@ More Info
         printf("Unknown:[%r]\n");
         return (0);
     }
+```
+```
     alex@ubuntu:~/c/printf$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
     alex@ubuntu:~/c/printf$ ./printf
     Let's try to printf a simple sentence.
@@ -335,7 +152,7 @@ More Info
     Unknown:[%r]
     Unknown:[%r]
     alex@ubuntu:~/c/printf$
-    
+```
 
 *   We strongly encourage you to work all together on a set of tests
 *   If the task does not specify what to do with an edge case, do the same as `printf`
