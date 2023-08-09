@@ -5,10 +5,10 @@
 
 _For this project, we expect you to look at these concepts:_
 
-*   [Group Projects](group_projects.md)
-*   [Pair Programming - How To](pair_programming.md)
-*   [Flowcharts](flow_charts.md)
-*   [Technical Writing](technical_writing.md)
+*   [Group Projects](https://github.com/wrightkhlebisol/printf/tree/main/concepts/group_projects)
+*   [Pair Programming - How To](https://github.com/wrightkhlebisol/printf/tree/main/concepts/pair_programming)
+*   [Flowcharts](https://github.com/wrightkhlebisol/printf/tree/main/concepts/flowcharts)
+*   [Technical Writing](https://github.com/wrightkhlebisol/printf/tree/main/concepts/technical_writing)
 
 Background Context
 ------------------
@@ -17,14 +17,14 @@ Write your own `printf` function.
 
 ![](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/228/printf.png)
 
-_^ In this picture, [Kris](/rltoken/pSPZEmqi5O8ZoeLM5-65WA "Kris"), and [Jul](/rltoken/X_vDffLlUpbtqnubfnQx8Q "Jul")_
+_^ In this picture, [Kris](https://twitter.com/krisbredemeier), and [Jul](https://twitter.com/cyrjulien)_
 
 Resources
 ---------
 
 **Read or watch**:
 
-*   [Secrets of printf](/rltoken/7Vw7aUWgwC7JYUrqI4bh4Q "Secrets of printf")
+*   [Secrets of printf](https://www.academia.edu/10297206/Secrets_of_printf_)
 *   **Group Projects** concept page (_Don’t forget to read this_)
 *   **Flowcharts** concept page
 
@@ -171,8 +171,6 @@ Tasks
 
 mandatory
 
-Score: 98.7% (Checks completed: 98.7%)
-
 Write a function that produces output according to a format.
 
 *   Prototype: `int _printf(const char *format, ...);`
@@ -198,8 +196,6 @@ Write a function that produces output according to a format.
 
 mandatory
 
-Score: 91.67% (Checks completed: 91.67%)
-
 Handle the following conversion specifiers:
 
 *   `d`
@@ -219,12 +215,11 @@ Handle the following conversion specifiers:
 
 #advanced
 
-Score: 87.5% (Checks completed: 87.5%)
 
 Handle the following custom conversion specifiers:
 
 *   `b`: the unsigned int argument is converted to binary
-
+```
     alex@ubuntu:~/c/printf$ cat main.c
     #include "main.h"
     
@@ -242,7 +237,7 @@ Handle the following custom conversion specifiers:
     alex@ubuntu:~/c/printf$ ./a.out
     1100010
     alex@ubuntu:~/c/printf$
-    
+```    
 
 **Repo:**
 
@@ -253,8 +248,6 @@ Handle the following custom conversion specifiers:
 ### 3\. What one has not experienced, one will never understand in print
 
 #advanced
-
-Score: 97.4% (Checks completed: 97.4%)
 
 Handle the following conversion specifiers:
 
@@ -277,8 +270,6 @@ Handle the following conversion specifiers:
 
 #advanced
 
-Score: 100.0% (Checks completed: 100.0%)
-
 Use a local buffer of 1024 chars in order to call `write` as little as possible.
 
 **Repo:**
@@ -291,13 +282,11 @@ Use a local buffer of 1024 chars in order to call `write` as little as possible.
 
 #advanced
 
-Score: 16.67% (Checks completed: 16.67%)
-
 Handle the following custom conversion specifier:
 
 *   `S` : prints the string.
 *   Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: `\x`, followed by the ASCII code value in hexadecimal (upper case - always 2 characters)
-
+```
     alex@ubuntu:~/c/printf$ cat main.c
     #include "main.h"
     
@@ -315,7 +304,7 @@ Handle the following custom conversion specifier:
     alex@ubuntu:~/c/printf$ ./a.out
     Best\x0ASchool
     alex@ubuntu:~/c/printf$
-    
+```    
 
 **Repo:**
 
@@ -326,8 +315,6 @@ Handle the following custom conversion specifier:
 ### 6\. How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print
 
 #advanced
-
-Score: 14.29% (Checks completed: 14.29%)
 
 Handle the following conversion specifier: `p`.
 
@@ -346,8 +333,6 @@ Handle the following conversion specifier: `p`.
 
 #advanced
 
-Score: 0.0% (Checks completed: 0.0%)
-
 Handle the following flag characters for non-custom conversion specifiers:
 
 *   `+`
@@ -363,8 +348,6 @@ Handle the following flag characters for non-custom conversion specifiers:
 ### 8\. Sarcasm is lost in print
 
 #advanced
-
-Score: 0.0% (Checks completed: 0.0%)
 
 Handle the following length modifiers for non-custom conversion specifiers:
 
@@ -383,8 +366,6 @@ Conversion specifiers to handle: `d`, `i`, `u`, `o`, `x`, `X`
 
 #advanced
 
-Score: 0.0% (Checks completed: 0.0%)
-
 Handle the field width for non-custom conversion specifiers.
 
 **Repo:**
@@ -396,8 +377,6 @@ Handle the field width for non-custom conversion specifiers.
 ### 10\. The negative is the equivalent of the composer's score, and the print the performance
 
 #advanced
-
-Score: 0.0% (Checks completed: 0.0%)
 
 Handle the precision for non-custom conversion specifiers.
 
@@ -411,8 +390,6 @@ Handle the precision for non-custom conversion specifiers.
 
 #advanced
 
-Score: 0.0% (Checks completed: 0.0%)
-
 Handle the `0` flag character for non-custom conversion specifiers.
 
 **Repo:**
@@ -425,8 +402,6 @@ Handle the `0` flag character for non-custom conversion specifiers.
 
 #advanced
 
-Score: 0.0% (Checks completed: 0.0%)
-
 Handle the `-` flag character for non-custom conversion specifiers.
 
 **Repo:**
@@ -438,8 +413,6 @@ Handle the `-` flag character for non-custom conversion specifiers.
 ### 13\. Print is the sharpest and the strongest weapon of our party
 
 #advanced
-
-Score: 100.0% (Checks completed: 100.0%)
 
 Handle the following custom conversion specifier:
 
@@ -455,8 +428,6 @@ Handle the following custom conversion specifier:
 
 #advanced
 
-Score: 0.0% (Checks completed: 0.0%)
-
 Handle the following custom conversion specifier:
 
 *   `R`: prints the rot13'ed string
@@ -470,8 +441,6 @@ Handle the following custom conversion specifier:
 ### 15\. \*
 
 #advanced
-
-Score: 20.24% (Checks completed: 20.24%)
 
 All the above options work well together.
 

@@ -166,7 +166,7 @@ Some good uses of flowcharts:
 
 A flowchart can be as high-level or as detailed as you want. For example, you could break the flowchart above down further to include what is happening in memory. You can even create flowcharts from your everyday non-technical experiences. Choosing a movie or a place to eat could be displayed as a flow-chart!
 
-A helpful tool to create flowcharts is [draw.io](/rltoken/aOmwlxIhyIzTDorIC5SNWA "draw.io"). There are premade symbols for you to use and your diagrams can be saved to your Google Drive.
+A helpful tool to create flowcharts is [draw.io](https://app.diagrams.net/). There are premade symbols for you to use and your diagrams can be saved to your Google Drive.
 
 For more information on Flowcharts and related diagrams, a google search with simply “flowchart” can get you started. ;)
 
